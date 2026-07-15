@@ -1,7 +1,7 @@
 import { createAuthClient } from "better-auth/react";
 
 export const authClient = createAuthClient({
-  baseURL: "http://localhost:5000/api/auth",
+  baseURL: "https://event-server-nvtu.onrender.com/api/auth",
 
   user: {
     additionalFields: {
