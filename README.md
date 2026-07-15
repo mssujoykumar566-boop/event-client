@@ -1,36 +1,243 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# EventSphere - Event Management Platform (Frontend)
 
-## Getting Started
+![EventSphere Banner](https://i.ibb.co.com/placeholder/event-banner.png)
 
-First, run the development server:
+EventSphere is a modern event management platform where users can discover, explore, and join events. Organizers can create and manage events, while admins can monitor platform activities.
+
+The frontend is built with **Next.js, TypeScript, Tailwind CSS**, and modern UI practices to provide a responsive and user-friendly experience.
+
+---
+
+## 🚀 Live Website
+
+🔗 https://event-client-lhc8.onrender.com
+
+---
+
+## 📌 Features
+
+### Authentication
+- User registration and login
+- BetterAuth integration
+- Protected routes
+- Role-based access control
+- User/Admin dashboard
+
+### Event Management
+- Browse all events
+- Search events
+- Filter by category and location
+- Sort events
+- Pagination support
+- Event details page
+- Join event functionality
+
+### User Dashboard
+- View profile information
+- See joined events
+- Manage personal activities
+
+### Admin Dashboard
+- Admin overview
+- User management
+- Event management
+- Reports section
+
+### UI/UX
+- Fully responsive design
+- Mobile, tablet and desktop support
+- Modern card based layout
+- Loading states
+- Error handling
+- Smooth animations
+
+---
+
+# 🛠️ Technology Stack
+
+## Frontend
+
+- Next.js 16
+- React.js
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- BetterAuth Client
+- React Toastify
+- Gravity UI Icons
+
+---
+
+# 📂 Project Structure
+
+```
+event-client
+│
+├── app
+│   ├── dashboard
+│   ├── events
+│   ├── login
+│   ├── register
+│   ├── about
+│   ├── contact
+│   └── privacy
+│
+├── components
+│   ├── Navbar
+│   ├── Footer
+│   ├── Hero
+│   ├── EventCard
+│   └── Loading
+│
+├── lib
+│   └── auth-client.ts
+│
+├── public
+│
+└── types
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone frontend-repository-url
+```
+
+Go to project folder:
+
+```bash
+cd event-client
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Create environment file:
+
+```
+.env.local
+```
+
+Add:
+
+```env
+NEXT_PUBLIC_API_URL=your_backend_api_url
+```
+
+Example:
+
+```env
+NEXT_PUBLIC_API_URL=https://event-server-nvtu.onrender.com/api
+```
+
+Run development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+# 🔐 Demo Credentials
 
-To learn more about Next.js, take a look at the following resources:
+## User Account
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+Email:
+a@gmail.com
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Password:
+Laxman565
+```
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Admin Account
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+Email:
+laxman@.com
+
+Password:
+Laxman565
+```
+
+---
+
+# 📱 Pages
+
+## Public Pages
+
+- Home
+- Events
+- Event Details
+- About
+- Contact
+- Privacy Policy
+- Login
+- Register
+
+
+## Protected Pages
+
+- Dashboard
+- Profile
+- Joined Events
+- Admin Dashboard
+
+---
+
+# 🎨 Design Features
+
+- Maximum 3 primary colors
+- Consistent spacing and layout
+- Responsive components
+- Modern UI cards
+- Smooth animations
+- Professional landing page
+
+---
+
+# 🔗 Github Repository
+
+Fontend Repository:https://github.com/mssujoykumar566-boop/event-client.git
+
+```
+backend Repository: https://github.com/mssujoykumar566-boop/event-server.git
+```
+
+---
+
+# 👨‍💻 Developer
+
+Developed by **Laxman Kumar Halder**
+
+Frontend Developer
+
+GitHub:
+```
+https://github.com/mssujoykumar566-boop
+```
+
+LinkedIn:
+```
+https://www.linkedin.com/in/laxman-kumar-sujoy/
+```
+
+---
+
+# 📄 License
+
+This project is developed for educational and portfolio purposes.
