@@ -13,7 +13,7 @@ export default function JoinEventButton({ eventId }: Props) {
   const handleJoin = async () => {
     try {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/events/${eventId}/join`,
+        `/api/events/${eventId}/join`,
         {
           method: "POST",
           credentials: "include",

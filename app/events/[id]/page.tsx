@@ -3,7 +3,8 @@ import EventActions from "./EventActions";
 import EventCard from "@/src/components/EventCard";
 import { Event } from "@/src/types/event";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL =
+  process.env.BACKEND_API_URL ?? "https://event-server-nvtu.onrender.com/api";
 
 type Props = {
   params: Promise<{

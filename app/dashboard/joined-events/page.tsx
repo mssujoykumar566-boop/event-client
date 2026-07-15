@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = "/api";
 
 
 
@@ -26,7 +26,7 @@ type Registration = {
 
 type JoinedEventsResponse = {
   success: boolean;
-  data: Registration[];
+  data?: Registration[];
 };
 
 
@@ -64,7 +64,7 @@ export default function JoinedEventsPage() {
 
 
         const joinedEvents: Event[] =
-          data.data.map(
+          (data.data ?? []).map(
             (item: Registration) => item.event
           );
 

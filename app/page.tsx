@@ -7,7 +7,8 @@ import Newsletter from "@/src/components/Newsletter";
 import Statistics from "@/src/components/Statistics";
 import Testimonials from "@/src/components/Testimonials";
 import type { Event } from "@/src/types/event";
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL =
+  process.env.BACKEND_API_URL ?? "https://event-server-nvtu.onrender.com/api";
 
 
 

@@ -61,7 +61,7 @@ export default function DashboardPage() {
   useEffect(() => {
      const getStats = async () => {
       const res = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/events/dashboard-stats`,
+        "/api/events/dashboard-stats",
         {
           credentials: "include",
         },
