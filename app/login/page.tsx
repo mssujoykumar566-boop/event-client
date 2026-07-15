@@ -34,13 +34,16 @@ export default function LoginPage() {
       return;
     }
 
-    if (data) {
-      toast.success("Login successful");
+  if (data) {
+  toast.success("Login successful");
 
-      // window.location.href = "/";
-     router.push("/dashboard");
-      router.refresh();
-    }
+  const session = await authClient.getSession();
+
+  console.log("SESSION AFTER LOGIN:", session);
+
+  router.push("/dashboard");
+  router.refresh();
+}
   };
 
   return (
