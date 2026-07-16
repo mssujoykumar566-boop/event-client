@@ -16,31 +16,62 @@ interface EventsResponse {
   success: boolean;
   events: Event[];
   data?: Event[];
+  error?: string;
 }
 
-
-
 async function getEvents(): Promise<EventsResponse> {
+  try {
+    const res = await fetch(`${API_URL}/events`, {
+      next: { revalidate: 60 },
+    });
 
-  const res = await fetch(`${API_URL}/events`, {
-    cache: "no-store",
-  });
+    if (!res.ok) {
+      return {
+        success: false,
+        events: [],
+        data: [],
+        error:
+          res.status === 429
+            ? "Events are temporarily rate-limited. Please try again shortly."
+            : "Events are temporarily unavailable.",
+      };
+    }
 
+    const contentType = res.headers.get("content-type") ?? "";
 
-  const text = await res.text();
+    if (!contentType.includes("application/json")) {
+      return {
+        success: false,
+        events: [],
+        data: [],
+        error: "Events are temporarily unavailable.",
+      };
+    }
 
+    const data: unknown = await res.json();
 
-  if (!text) {
+    if (
+      !data ||
+      typeof data !== "object" ||
+      !Array.isArray((data as EventsResponse).events)
+    ) {
+      return {
+        success: false,
+        events: [],
+        data: [],
+        error: "The events service returned an unexpected response.",
+      };
+    }
+
+    return data as EventsResponse;
+  } catch {
     return {
       success: false,
       events: [],
       data: [],
+      error: "Events are temporarily unavailable.",
     };
   }
-
-
-  return JSON.parse(text);
-
 }
 
 export default async function Home() {
@@ -67,6 +98,11 @@ export default async function Home() {
         ))}
 
       </div>
+      {data.error && (
+        <p className="mt-6 text-center text-sm text-gray-500" role="status">
+          {data.error}
+        </p>
+      )}
         <Features/>
 
         <EventCategories/>
